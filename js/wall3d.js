@@ -39,4 +39,5 @@
            xPos: e.clientX / window.innerWidth * 100
        });
    });
+
 })(); 
