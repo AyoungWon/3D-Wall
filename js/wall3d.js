@@ -36,7 +36,8 @@
    stageElem.addEventListener('click', function(e) {
        console.log();
        new Character({
-           xPos: e.clientX / window.innerWidth * 100
+           xPos: e.clientX / window.innerWidth * 100,
+           speed: Math.random() * 0.4 + 0.2
        });
    });
 

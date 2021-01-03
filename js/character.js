@@ -33,7 +33,7 @@ function Character(info) {
     this.scrollState = false; //스크롤 중인지 아닌지 체크(만들어졌을 때는 스크롤되지 않았으니 false);
     this.lastScrollTop = 0; // 바로 이전 스크롤 위치
     this.xPos = info.xPos;
-    this.speed = 0.3;
+    this.speed = info.speed;
     this.direction;
     this.runningState = false; //좌우 이동키를 반복적으로 누르는지 확인
     this.rafId;
@@ -103,10 +103,18 @@ Character.prototype = {
     },
     run: function(self) {
         
+        
         if (self.direction == 'left')  {
             self.xPos -= self.speed;
         } else if (self.direction == 'right') {
             self.xPos += self.speed;
+        }
+        if(self.xPos < 2){
+            self.xPos = 2;
+        }
+
+        if(self.xPos > 88){
+            self.xPos = 88;
         }
     
             self.mainElem.style.left = self.xPos + '%';
