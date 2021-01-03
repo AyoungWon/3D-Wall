@@ -30,9 +30,13 @@
 
     })
 
-
-
-
     window.addEventListener('resize', resizeHandler);
     resizeHandler(); //load되면 한번 초기화
+
+   stageElem.addEventListener('click', function(e) {
+       console.log();
+       new Character({
+           xPos: e.clientX / window.innerWidth * 100
+       });
+   });
 })(); 
